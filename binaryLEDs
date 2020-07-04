@@ -3,7 +3,9 @@ from time import *
 from random import randrange
 
 def main():
+	# LCD
 	pinMode(0, OUT)
+	# The 8 LEDs that will be used to represent the binary number
 	pinMode(1, OUT)
 	pinMode(2, OUT)
 	pinMode(3, OUT)
@@ -12,6 +14,7 @@ def main():
 	pinMode(6, OUT)
 	pinMode(7, OUT)
 	pinMode(8, OUT)
+	# Rocker Switch
 	pinMode(9, IN)
 	
 	customWrite(0, "")
@@ -26,11 +29,16 @@ def main():
 		digitalWrite(7, 0)
 		digitalWrite(8, 0)
 		
+		# Rocker Switch is on
 		if digitalRead(9, HIGH):
+			# A random decimal number I will convert to binary
 			decimalNumber = randrange(0, 256)
+			
 			# bin() returns the binary number and [2:] cuts off the first two characters
 			binaryDisplay(bin(decimalNumber)[2:])
+			
 			# Display both DEC and HEX number
+			# hex() returns the hexadecimal number
 			customWrite(0, "DEC: " + str(decimalNumber) + "\n" +
 						   "HEX: " + str(hex(decimalNumber)[2:]))
 			delay(2000)
@@ -41,12 +49,15 @@ def main():
 def binaryDisplay(number):
 	# Returns number as string list
 	map(int, str(number))
+	# Used to represent the LED when looping through the binary number
 	count = len(number)
+	
 	for item in number:
 		# Binary number is in a string list
 		# Last element in list is the first LED
 		# Check if element is '1' therefore HIGH else LOW
 		digitalWrite(count, HIGH if item == '1' else LOW)
+		
 		# Move to next LED
 		count -= 1
 	
