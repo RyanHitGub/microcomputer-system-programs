@@ -1,5 +1,5 @@
 # microcomputer-system-programs 
-A collection of microcomputer system programs written in Python. Programs can be used in Cisco Packet Tracer (virtual microcomputer) or Raspberry Pi microcomputers. 
+A collection of microcomputer system programs written in Python. Programs were created in Cisco Packet Tracer (virtual microcomputer). 
 
 The 'binaryLEDs' file is a program that converts randomly generated decimal numbers to binary and displays the binary numbers across 8 LEDs.
 
