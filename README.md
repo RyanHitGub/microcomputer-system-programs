@@ -1,2 +1,2 @@
 # morse-code-microcomputer-system
-A microcomputer system that takes a string message and converts it to morse code.
+A collection of microcomputer system programs written in Python. Programs can be used in Cisco Packet Tracer (virtual microcomputer) or Raspberry Pi microcomputers. 
